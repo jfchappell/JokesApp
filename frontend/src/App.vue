@@ -26,4 +26,8 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
+.main-window{
+  margin-top: 0px;
+}
 </style>
