@@ -9,11 +9,15 @@
                     <td style="font-size: 30px; font-weight: bold;">Joke ID</td>
                     <td style="font-size: 30px; font-weight: bold;">Joke Question</td>
                     <td style="font-size: 30px; font-weight: bold;">Joke Answer</td>
+                    <td style="font-size: 30px; font-weight: bold;">Edit</td>
+                    <td style="font-size: 30px; font-weight: bold;">Delete</td>
                 </tr>
                 <tr v-for="joke in info" v-bind:key="joke.jokeId">
                     <td style="font-size: 20px;">{{joke.jokeId}}</td>
                     <td style="font-size: 20px;">{{joke.jokeQuestion}}</td>
                     <td style="font-size: 20px;">{{joke.jokeAnswer}}</td>
+                    <td style="font-size: 20px;"><a :href="'edit/' + joke.jokeId">Edit</a></td>
+                    <td style="font-size: 20px;"><input type="button" class="form-control" name="submitButton" @click="del(joke.jokeId)" value="Delete Joke"/></td>
                 </tr>
             </table>
             <br>
@@ -42,6 +46,11 @@ export default {
             const { data } = await JokesRepository.get();
             this.loading = false;
             this.info = data;
+        },
+        async del (id) {
+            JokesRepository.delete(id).then(() => {
+                this.fetch();
+            })
         }
     }
 }

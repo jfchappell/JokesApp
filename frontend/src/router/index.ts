@@ -12,22 +12,14 @@ export default new VueRouter({
     },
     {
       path: '/add',
-      name: 'JokesAdd',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/JokesAdd.vue')
+      name: 'JokeAdd',
+      component: () => import('../views/JokeAdd.vue')
     },
     {
-      path: '/edit',
-      name: 'JokesEdit',
-      component: () => import('../views/JokesEdit.vue')
+      path: '/edit/:id',
+      name: 'JokeEdit',
+      component: () => import('../views/JokeEdit.vue')
     },
-    {
-      path: '/delete',
-      name: 'JokesDelete',
-      component: () => import('../views/JokesDelete.vue')
-    }
   ],
   mode: 'history'
 }) 

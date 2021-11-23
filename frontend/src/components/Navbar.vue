@@ -9,12 +9,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/add">Add Joke</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/edit">Edit Joke</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/delete">Delete Joke</a>
-                </li>
             </ul>
         </div>
     </nav>

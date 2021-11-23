@@ -23,7 +23,7 @@ namespace Jokes.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                // #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Server=(local);Database=Jokes;Trusted_Connection=True;");
             }
         }
@@ -34,10 +34,6 @@ namespace Jokes.Models
 
             modelBuilder.Entity<Joke>(entity =>
             {
-                entity.ToTable("Joke");
-
-                entity.Property(e => e.JokeId).ValueGeneratedNever();
-
                 entity.Property(e => e.JokeAnswer)
                     .IsRequired()
                     .IsUnicode(false);
